@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio autoplay> 
+    <source src="MyGirl.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
+        <div class="box box-top-left">
+    <img src="https://imgur.com/a/irntCmP.jpg" alt="My Girl">
+    </div>
+    <div class="text text-top-left">
+        Haii cinta manis, aku sayang banget sama kamu, semoga kita bertahan lama ya!
+    </div>
+    <button class="button">BALAS</button>
+    <div class="text text-bottom-left">
+        Nama: Naysca Sekar Tantri
+        Umur: 16 tahun
+        Streamer fav: Windah Batubara
+    </div>
+    <div class="box box bottom-right">
+        <img src="https://imgur.com/a/RMENfKG.jpg" alt="My girl 2">
+    </div>
+    <div class="text text-bottom">
+        I LOVE YOUU
+    </div>
+    </div>
+</body>
+</html>
+
+<style>
+
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-image: url('Background.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+    "top-left top-right"
+    "button button"
+    "bottom-left bottom-right"
+    ". bottom-text";
+    gap: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.box {
+        width: 150px;
+        height: 200px;
+        border: 2px solid white;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+
+.box-top-left {
+    grid-area: top-left;
+}
+
+.box-bottom-right {
+        grid-area: bottom-right;
+}
+
+.text {
+        color: white;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0,2);
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: left;
+}
+
+.text-top-right {
+        grid-area: top-right;
+}
+
+.text-bottom-left {
+    grid-area: bottom-left;
+}
+
+.text-bottom {
+        grid-area: bottom-text;
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding:  10px;
+        font-size: 12px;
+        line-height: 1.4;
+}
+
+    .button {
+        grid-area: button;
+        padding: 10px 20px;
+        font-size: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        margin: auto;
+    }
